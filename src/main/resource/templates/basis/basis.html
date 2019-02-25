@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <div th:replace="head::quote"> </div>
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+</head>
+<body>
+
+<div th:replace="head::copy"> </div>
+
+    <div class="panel-body" >
+        <div class="panel panel-default">
+            <div class="panel-heading">
+			<h3 class="panel-title">
+			DB基础信息
+			</h3>
+			</div>
+            <div class="panel-body">
+            	<div id ="toolbar">
+            		<button type="button" class="btn btn-primary" id ="addBasis">新增</button>
+            	</div>
+				<table id="table_db"></table>
+			</div>
+        </div> 
+    </div>
+    
+    
+    <!-- 弹出框 -->
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="dbTableName">Basis信息</h4>
+				</div>
+				<div class="modal-body">
+				<form role="form" id ="addForm">
+					<div class ="container">
+						<div class="row">
+							<div class="clo-md-6 col-lg-3">
+								<label for="ip">IP</label>
+								<input type="text" class="form-control" name="ip" id="ip_input"/>
+							</div>
+							<div class="clo-md-6 col-lg-3">
+								<label for="port">端口</label>
+								<input type="text" class="form-control" name="port" id="port_input"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="clo-md-6 col-lg-3">
+								<label for="user">用户名</label>
+								<input type="text" class="form-control" name="user" id="user_input"/>
+							</div>
+							<div class="clo-md-6 col-lg-3">
+								<label for="password">密码</label>
+								<input type="text" class="form-control" name="password" id="password_input"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="clo-md-6 col-lg-3">
+								<label for="remark">备注</label>
+								<input type="text" class="form-control" name="remark" id="remark_input"/>
+							</div>
+							<div class="clo-md-6 col-lg-3">
+								<label for="defaultDb">默认数据库</label>
+								<input type="text" class="form-control" name="defaultDb" id="defaultDb_input"/>
+							</div>
+						</div>
+					</div>
+					<input type="text" name="id" style="display:none;" id="id_input"></input>
+				</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id ="confirm_add">确认</button>
+					<button type="button" class="btn btn-primary" id ="confirm_upd">确认</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+<!-- 弹出框 -->
+
+    <!-- 弹出框 -->
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="dbModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="db">DB信息</h4>
+				</div>
+				<div class="modal-body" id ="showDB">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+<!-- 弹出框 -->
+
+</body>
+</html>

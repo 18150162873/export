@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lance.export.domain.repository.ExportDao" >
+	
+	<!-- 查询所有的表 -->
+	<select id="findAllWarehouseTables" resultType="java.util.Map">
+		select table_name 
+		from information_schema.tables
+		where table_schema='warehouse'
+	</select>
+	
+	<select id="findTableInfo" resultType="java.util.Map" parameterType="java.util.Map" statementType="STATEMENT">
+		<![CDATA[show full fields from ${tableName}]]>
+	</select>
+	
+<!-- 	<select id="findTableInfo" resultType="java.util.Map" parameterType="java.util.Map" statementType="STATEMENT">
+		<![CDATA[show full fields from ${tableName}]]>
+	</select> -->
+</mapper>
