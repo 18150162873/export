@@ -33,7 +33,7 @@ public class CodeFactory {
 		String selectStr =  select.stream().collect(Collectors.joining(",<br/>"));
 		selectSb.append("select<br/>");
 		selectSb.append(selectStr);
-		selectSb.append("<br/>from "+Tools.camelCaseForMate(tableName)+"<br/>");
+		selectSb.append("<br/>from "+tableName+"<br/>");
 		System.out.println("select<br/>"+selectStr+"<br/>from");
 		
 		StringBuffer ifsb =new StringBuffer();
