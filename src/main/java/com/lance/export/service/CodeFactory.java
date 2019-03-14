@@ -38,7 +38,7 @@ public class CodeFactory {
 		
 		StringBuffer ifsb =new StringBuffer();
 		for(String s:list) {
-			ifsb.append(" &lt;if test=\""+Tools.camelCaseForMate(s)+" != null\" &gt;\r<br/>" + 
+			ifsb.append(" &lt;if test=\""+Tools.camelCaseForMate(s)+" != null  and "+Tools.camelCaseForMate(s)+" != ''\" &gt;\r<br/>" + 
 					"       and "+s+" =#{"+Tools.camelCaseForMate(s)+"}\r<br/>" + 
 					"&lt;/if&gt;<br/>");
 		}
